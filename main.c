@@ -11,7 +11,7 @@ int main()
     float fp;
     // declare variable x, y and z
     int x, y, z;
-/* 
+
     // Ask user to enter a character
     printf("Enter a character: ");
  
@@ -64,7 +64,7 @@ int main()
  
     // print the entered numbers
     printf("Value of x = %d , y = %d, z = %d\n\n", x, y, z);
-*/
+
     printf("Enter a character: ");
     ch = getchar();
  
