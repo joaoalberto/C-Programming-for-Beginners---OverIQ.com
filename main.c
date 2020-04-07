@@ -1,13 +1,18 @@
 #include<stdio.h>
 #include<math.h>
 #include "functions.h" // My local defined functions
+
+#define SIZE 10
  
 void rec();
  
 int main()
 {
-     rec(1);
+    int size = 10;
  
+    int my_arr1[SIZE]; // ok
+    int my_arr2[size]; // not allowed until C99
+
     // signal to operating system program ran fine
     return 0;
 }
