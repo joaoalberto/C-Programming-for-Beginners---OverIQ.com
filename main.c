@@ -4,27 +4,23 @@
 
 #define SIZE 10
  
-void rec();
- 
 int main()
 {
-    int size = 10;
+    int arr[5], i;
  
-    int my_arr1[SIZE]; // ok
-    int my_arr2[size]; // not allowed until C99
-
-    // signal to operating system program ran fine
-    return 0;
-}
- 
-void rec(int n)
-{
-    printf("Winding phase: Level = %d\n", n);
- 
-    if(n<3)
+    for(i = 0; i < 5; i++)
     {
-        rec(n+1);
+        printf("Enter a[%d]: ", i);
+        scanf("%d", &arr[i]);
+    } 
+ 
+    printf("\nPrinting elements of the array: \n\n");
+ 
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
     }
  
-    printf("Unwinding phase: Level = %d\n", n);
+    // signal to operating system program ran fine
+    return 0;
 }
