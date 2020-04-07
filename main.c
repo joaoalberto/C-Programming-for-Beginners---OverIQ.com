@@ -2,43 +2,24 @@
 #include<math.h>
 #include "functions.h" // My local defined functions
  
-int factorial(int x); // declaration of factorial function
+void rec();
  
 int main()
 {
-    int n;
-    printf("Calculate factorial: \n\n");
-    printf("Enter number : ");
-    scanf("%d", &n);
+     rec(1);
  
-    if(n < 0)
-    {
-        printf("\nFactorial is only defined for positive numbers");
-    }
- 
-    else
-    {
-        printf("\n%d! = %d\n\n", n, factorial(n)); // calling factorial function
-    }
- 
-    // signal to operating system everything works fine
+    // signal to operating system program ran fine
     return 0;
 }
  
-// definition of factorial function
- 
-int factorial(int n)
+void rec(int n)
 {
-    if(n == 0)
+    printf("Winding phase: Level = %d\n", n);
+ 
+    if(n<3)
     {
-        return 1;
+        rec(n+1);
     }
  
-    int f = 1, i;
- 
-    for(i = n; i > 0; i-- )
-    {
-        f = f * i;
-    }
-    return f;
+    printf("Unwinding phase: Level = %d\n", n);
 }
