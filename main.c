@@ -1,76 +1,44 @@
-/*Input and Output in C - 12-03-2020 18:55*/
-
 #include<stdio.h>
+#include<math.h>
+#include "functions.h" // My local defined functions
+ 
+int factorial(int x); // declaration of factorial function
  
 int main()
-{    // declare variable ch
-    char ch;
-     // declare variable i
-    int i;
-    // declare variable fp
-    float fp;
-    // declare variable x, y and z
-    int x, y, z;
-
-    // Ask user to enter a character
-    printf("Enter a character: ");
+{
+    int n;
+    printf("Calculate factorial: \n\n");
+    printf("Enter number : ");
+    scanf("%d", &n);
  
-    // accept input from keyboard
-    scanf("%c", &ch);
+    if(n < 0)
+    {
+        printf("\nFactorial is only defined for positive numbers");
+    }
  
-    // print the entered character
-    printf("You entered %c\n\n", ch);
-
-    // Ask user to enter a number
-    printf("Enter a number: ");
+    else
+    {
+        printf("\n%d! = %d\n\n", n, factorial(n)); // calling factorial function
+    }
  
-    // accept input from keyboard
-    scanf("%d", &i);
+    // signal to operating system everything works fine
+    return 0;
+}
  
-    // print the entered number
-    printf("You entered %d\n\n", i);
-    
-    // Ask user to enter a floating point number
-    printf("Enter a floating point number: ");
+// definition of factorial function
  
-    // accept input from keyboard
-    scanf("%f", &fp);
+int factorial(int n)
+{
+    if(n == 0)
+    {
+        return 1;
+    }
  
-    // print the entered float point number
-    printf("You entered %f\n\n", fp);
-     
-    // Ask user to enter 2 number
-    printf("Enter two numbers: ");
+    int f = 1, i;
  
-    // accept input from keyboard
-    scanf("%d%d", &x, &y);
- 
-    // print the entered numbers
-    printf("Value of x = %d and y = %d\n\n", x, y);
-    
-    // Ask user to enter 2 number
-    printf("Enter new two numbers: ");
- 
-    // accept input from keyboard
-    scanf("%d:%d", &x, &y);
- 
-    // print the entered numbers
-    printf("Value of x = %d and y = %d\n\n", x, y);
-    // Ask user to enter 3 number
-    printf("Enter three numbers: ");
- 
-    // accept input from keyboard
-    scanf("%d,%d,%d", &x, &y, &z);
- 
-    // print the entered numbers
-    printf("Value of x = %d , y = %d, z = %d\n\n", x, y, z);
-
-    printf("Enter a character: ");
-    ch = getchar();
- 
-    printf("The entered character is: ");
-    putchar(ch);
-    printf("\n\n");
-    
-    return 0; // signal to operating system everything works fine
+    for(i = n; i > 0; i-- )
+    {
+        f = f * i;
+    }
+    return f;
 }
