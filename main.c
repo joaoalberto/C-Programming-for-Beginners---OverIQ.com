@@ -6,18 +6,27 @@
  
 int main()
 {
-  int my_arr[5] = {1, 2, 3, 4, 5}, i;
-  int *p;
-  p = my_arr;
-  // p = &my_arr[0]; // you can also do this
-
-  for(i = 0; i < 5; i++)
-  {
-      printf("Value of a[%d] = %d\t", i, *(p + i) );
-      printf("Address of a[%d] = %u\n", i, p + i );
-  }
-
-
-  // signal to operating system program ran fine
-  return 0;
+    int arr[3][4] = {
+                        {11,22,33,44},
+                        {55,66,77,88},
+                        {11,66,77,44}
+                    };
+ 
+    int i, j;
+    int (*p)[4];
+ 
+    p = arr;
+ 
+    for(i = 0; i < 3; i++)
+    {
+        printf("Address of %d th array %u \n",i , p + i);
+        for(j = 0; j < 4; j++)
+        {
+            printf("arr[%d][%d]=%d\n", i, j, *( *(p + i) + j) );
+        }
+        printf("\n\n");
+    }
+ 
+    // signal to operating system program ran fine
+    return 0;
 }
