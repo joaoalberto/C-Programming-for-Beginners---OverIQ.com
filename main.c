@@ -4,39 +4,57 @@
 
 #define SIZE 10
  
-void my_func(int a[]);
+void change_twod(int (*a)[3]);
  
 int main()
 {
-    int my_arr[] = {1,4,9,16,23}, i;
+    int i,j, two_d[2][3] = {
+                               {99,44,11},
+                               {4,66,9}
+                           };
+ 
     printf("Original array: \n\n");
  
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < 2; i++)
     {
-        printf("%d ", my_arr[i]);
+        for(j = 0; j < 3; j++)
+        {
+            printf("%3d ", two_d[i][j]);
+        }
+ 
+        printf("\n");
     }
  
-    my_func(my_arr);
+    change_twod(two_d);
  
     printf("\n\nModified array : \n\n");
  
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < 2; i++)
     {
-        printf("%d ", my_arr[i]);
+        for(j = 0; j < 3; j++)
+        {
+            printf("%3d ", two_d[i][j]);
+        }
+        printf("\n");
     }
  
-    // signal to operating system program ran fine
+    // signal to operating system everything works fine
     return 0;
 }
  
-void my_func(int a[5])
+void change_twod(int (*arr)[3])
 {
-    int i;
+    int i, j;
  
-    // increment original elements by 5
+    printf("\n\nIncrementing every element by 5\n");
+    // increment original elements by 6
  
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < 2; i++)
     {
-        a[i] = a[i] + 5;
+        for(j = 0; j < 3; j++)
+        {
+            arr[i][j] = arr[i][j] + 5;
+        }
     }
+ 
 }
