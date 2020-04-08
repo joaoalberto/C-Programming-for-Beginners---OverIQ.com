@@ -4,25 +4,29 @@
 
 #define SIZE 10
  
-void return_more_than_one(int a, int b, int *sum, int *diff, int *prod);
+int *return_pointer(int *, int); // this function returns a pointer of type int
  
 int main()
 {
-    int x = 40, y = 10, sum, diff, prod;
+    int i, *ptr;
+    int arr[] = {11, 22, 33, 44, 55};
+    i = 4;
  
-    return_more_than_one(x, y, &sum, &diff, &prod);
+    printf("Address of arr = %u\n", arr);
  
-    printf("%d + %d = %d\n",x, y, sum);
-    printf("%d - %d = %d\n",x, y, diff);
-    printf("%d * %d = %d\n",x, y, prod);
+    ptr = return_pointer(arr, i);
+ 
+    printf("\nAfter incrementing arr by 4 \n\n");
+ 
+    printf("Address of ptr = %u\n\n" , ptr);
+    printf("Value at %u is %d\n", ptr, *ptr);
  
     // signal to operating system program ran fine
     return 0;
 }
  
-void return_more_than_one(int a, int b, int *sum, int *diff, int *prod)
+int *return_pointer(int *p, int n)
 {
-    *sum = a+b;
-    *diff = a-b;
-    *prod = a*b;
+    p = p + n;
+    return p;
 }
