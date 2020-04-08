@@ -4,29 +4,39 @@
 
 #define SIZE 10
  
-int *return_pointer(int *, int); // this function returns a pointer of type int
+void new_array(int a[]);
  
 int main()
 {
-    int i, *ptr;
-    int arr[] = {11, 22, 33, 44, 55};
-    i = 4;
+    int my_arr[] = {1,4,9,16,23}, i;
+    printf("Original array: \n\n");
  
-    printf("Address of arr = %u\n", arr);
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", my_arr[i]);
+    }
  
-    ptr = return_pointer(arr, i);
+    my_func(my_arr);
  
-    printf("\nAfter incrementing arr by 4 \n\n");
+    printf("\n\nModified array : \n\n");
  
-    printf("Address of ptr = %u\n\n" , ptr);
-    printf("Value at %u is %d\n", ptr, *ptr);
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", my_arr[i]);
+    }
  
     // signal to operating system program ran fine
     return 0;
 }
  
-int *return_pointer(int *p, int n)
+void my_func(int a[5])
 {
-    p = p + n;
-    return p;
+    int i;
+ 
+    // increment original elements by 5
+ 
+    for(i = 0; i < 5; i++)
+    {
+        a[i] = a[i] + 5;
+    }
 }
