@@ -4,33 +4,25 @@
 
 #define SIZE 10
  
-void try_to_change(int *, int *);
+void return_more_than_one(int a, int b, int *sum, int *diff, int *prod);
  
 int main()
 {
-    int x = 10, y = 20;
+    int x = 40, y = 10, sum, diff, prod;
  
-    printf("Initial value of x = %d\n", x);
-    printf("Initial value of y = %d\n", y);
+    return_more_than_one(x, y, &sum, &diff, &prod);
  
-    printf("\nCalling the function\n");
+    printf("%d + %d = %d\n",x, y, sum);
+    printf("%d - %d = %d\n",x, y, diff);
+    printf("%d * %d = %d\n",x, y, prod);
  
-    try_to_change(&x, &y);
- 
-    printf("\nValues after function call\n\n");
- 
-    printf("Final value of x = %d\n", x);
-    printf("Final value of y = %d\n", y);
- 
-    // signal to operating system everything works fine
+    // signal to operating system program ran fine
     return 0;
 }
  
-void try_to_change(int *x, int *y)
+void return_more_than_one(int a, int b, int *sum, int *diff, int *prod)
 {
-    (*x)++;
-    (*y)++;
- 
-    printf("\nValue of x (inside function) = %d\n", *x);
-    printf("Value of y (inside function) = %d\n", *y);
+    *sum = a+b;
+    *diff = a-b;
+    *prod = a*b;
 }
