@@ -4,57 +4,19 @@
 
 #define SIZE 10
  
-void change_twod(int (*a)[3]);
- 
 int main()
 {
-    int i,j, two_d[2][3] = {
-                               {99,44,11},
-                               {4,66,9}
-                           };
+    int *arrop[3];
+    int a = 10, b = 20, c = 50, i;
  
-    printf("Original array: \n\n");
+    arrop[0] = &a;
+    arrop[1] = &b;
+    arrop[2] = &c;
  
-    for(i = 0; i < 2; i++)
+    for(i = 0; i < 3; i++)
     {
-        for(j = 0; j < 3; j++)
-        {
-            printf("%3d ", two_d[i][j]);
-        }
- 
-        printf("\n");
+        printf("Address = %p\t Value = %d\n", arrop[i], *arrop[i]);
     }
  
-    change_twod(two_d);
- 
-    printf("\n\nModified array : \n\n");
- 
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 3; j++)
-        {
-            printf("%3d ", two_d[i][j]);
-        }
-        printf("\n");
-    }
- 
-    // signal to operating system everything works fine
     return 0;
-}
- 
-void change_twod(int (*arr)[3])
-{
-    int i, j;
- 
-    printf("\n\nIncrementing every element by 5\n");
-    // increment original elements by 6
- 
-    for(i = 0; i < 2; i++)
-    {
-        for(j = 0; j < 3; j++)
-        {
-            arr[i][j] = arr[i][j] + 5;
-        }
-    }
- 
 }
