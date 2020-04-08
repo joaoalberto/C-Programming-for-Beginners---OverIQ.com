@@ -4,29 +4,33 @@
 
 #define SIZE 10
  
+void try_to_change(int, int);
+ 
 int main()
 {
-    int arr[3][4] = {
-                        {11,22,33,44},
-                        {55,66,77,88},
-                        {11,66,77,44}
-                    };
+    int x = 10, y = 20;
  
-    int i, j;
-    int (*p)[4];
+    printf("Initial value of x = %d\n", x);
+    printf("Initial value of y = %d\n", y);
  
-    p = arr;
+    printf("\nCalling the function\n");
  
-    for(i = 0; i < 3; i++)
-    {
-        printf("Address of %d th array %u \n",i , p + i);
-        for(j = 0; j < 4; j++)
-        {
-            printf("arr[%d][%d]=%d\n", i, j, *( *(p + i) + j) );
-        }
-        printf("\n\n");
-    }
+    try_to_change(x, y);
+ 
+    printf("\nValues after function call\n\n");
+ 
+    printf("Final value of x = %d\n", x);
+    printf("Final value of y = %d\n", y);
  
     // signal to operating system program ran fine
     return 0;
+}
+ 
+void try_to_change(int x, int y)
+{
+    x = x + 10;
+    y = y + 10;
+ 
+    printf("\nValue of x (inside function) = %d\n", x);
+    printf("Value of y (inside function) = %d\n", y);
 }
