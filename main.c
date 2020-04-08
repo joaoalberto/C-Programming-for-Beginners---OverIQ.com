@@ -4,7 +4,7 @@
 
 #define SIZE 10
  
-void new_array(int a[]);
+void my_func(int a[]);
  
 int main()
 {
