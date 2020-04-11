@@ -6,17 +6,21 @@
  
 int main()
 {
-    int *arrop[3];
-    int a = 10, b = 20, c = 50, i;
+    int i = 10;
+    float f = 2.34;
+    char ch = 'k';
  
-    arrop[0] = &a;
-    arrop[1] = &b;
-    arrop[2] = &c;
+    void *vptr;
  
-    for(i = 0; i < 3; i++)
-    {
-        printf("Address = %p\t Value = %d\n", arrop[i], *arrop[i]);
-    }
+    vptr = &i;
+    printf("Value of i = %d\n", *(int *)vptr);
  
+    vptr = &f;
+    printf("Value of f = %.2f\n", *(float *)vptr);
+ 
+    vptr = &ch;
+    printf("Value of ch = %c\n", *(char *)vptr);
+ 
+    // signal to operating system program ran fine
     return 0;
 }
