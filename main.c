@@ -7,10 +7,11 @@ int main()
 {
     int i;
     char str[6] = "hello";
+    char *p;
  
-    for(i = 0; str[i] != '\0'; i++)
+    for(p = str; *p != '\0'; p++)
     {
-        printf("Character = %c\t Address = %p\n", str[i], &str[i]);
+        printf("Character = %c\t Address = %p\n", *(p), p);
     }
  
     // signal to operating system program ran fine
