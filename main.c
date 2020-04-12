@@ -5,46 +5,12 @@
  
 int main()
 {
-    int *p, i, n;
+    int i;
+    char str[6] = "hello";
  
-    printf("Initial size of the array is 4\n\n");
-    p = (int*)calloc(4, sizeof(int));
- 
-    if(p==NULL)
+    for(i = 0; str[i] != '\0'; i++)
     {
-        printf("Memory allocation failed");
-        exit(1); // exit the program
-    }
- 
-    for(i = 0; i < 4; i++)
-    {
-        printf("Enter element at index %d: ", i);
-        scanf("%d", p+i);
-    }
- 
-    printf("\nIncreasing the size of the array by 5 elements ...\n ");
- 
-    p = (int*)realloc(p, 9 * sizeof(int));
- 
-    if(p==NULL)
-    {
-        printf("Memory allocation failed");
-        exit(1); // exit the program
-    }
- 
-    printf("\nEnter 5 more integers\n\n");
- 
-    for(i = 4; i < 9; i++)
-    {
-        printf("Enter element at index %d: ", i);
-        scanf("%d", p+i);
-    }
- 
-    printf("\nFinal array: \n\n");
- 
-    for(i = 0; i < 9; i++)
-    {
-        printf("%d ", *(p+i) );
+        printf("Character = %c\t Address = %p\n", str[i], &str[i]);
     }
  
     // signal to operating system program ran fine
