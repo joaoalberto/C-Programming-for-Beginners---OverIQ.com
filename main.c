@@ -1,19 +1,40 @@
 #include<stdio.h>
 #include<math.h>
 #include "functions.h" // My local defined functions
-
-#define SIZE 10
+#include<stdlib.h>
  
 int main()
 {
-    int one_d[5] = {12, 19, 25, 34, 46}, i;
+    float *p, sum = 0;
+    int i, n;
  
-    void *vp = one_d;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
  
-    for(i = 0; i < 5; i++)
+    // allocate memory to store n variables of type float
+    p = (float*)malloc(n*sizeof(float));
+ 
+    // if dynamic allocation failed exit the program
+    if(p==NULL)
     {
-        printf("one_d[%d] = %d\n", i, *( (int *)vp + i ) );
+        printf("Memory allocation failed");
+        exit(1); // exit the program
     }
+ 
+    // ask the student to enter marks
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter marks for %d student: ", i+1);
+        scanf("%f", p+i);
+    }
+ 
+    // calculate sum
+    for(i = 0; i < n; i++)
+    {
+        sum += *(p+i);
+    }
+ 
+    printf("\nAverage marks = %.2f\n", sum/n);
  
     // signal to operating system program ran fine
     return 0;
