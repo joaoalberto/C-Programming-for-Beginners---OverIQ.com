@@ -6,26 +6,15 @@
  
 int main()
 {
-    char strg1[50], strg2[50];
-    int different;
+    char *s1 = "hello";
+    char *s2 = "world";
  
-    printf("Enter first string: ");
-    fgets(strg1, sizeof(strg1), stdin);// gets(destination); -->> deprecated e substituted by fgets.
+    printf("Address of string pointed by s1 = %p\n", s1);
+    printf("Address of string pointed by s2 = %p\n\n", s2);
  
-    printf("Enter second string: ");
-    fgets(strg2, sizeof(strg2), stdin);// gets(destination); -->> deprecated e substituted by fgets.
-
-    different = strcmp(strg1, strg2);
-
-    if (different)
-    {
-        printf("\nsame string, difference %d/n/n", different);
-    }
- 
-    else
-    {
-        printf("\nnot same!, difference %d/n/n", different);
-    }
+    printf("Is s1 == s2 ? %u\n", s1 == s2);
+    printf("Is s1 > s2 ? %u\n", s1 > s2);
+    printf("Is s1 < s2 ? %u\n", s1 < s2);
  
     // signal to operating system program ran fine
     return 0;
