@@ -1089,4 +1089,6 @@ int function(void) {
   // Signal to operating system everything works fine
   return 0;
 }
+
+fgets(strg1, sizeof(strg1), stdin);// gets(destination); -->> deprecated e substituted by fgets.
 */
