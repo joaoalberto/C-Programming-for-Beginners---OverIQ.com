@@ -6,19 +6,24 @@
  
 int main()
 {
-    int len;
+    char strg1[50], strg2[50];
+    int r;
  
-    // destination array can store only 30 characters including '\0'
-    char destination[30];
+    printf("Enter first string: ");
+    fgets(strg1, sizeof(strg1), stdin);// gets(destination); -->> deprecated e substituted by fgets.
  
-    printf("Enter your dream destination: ");
-    // gets(destination); -->> deprecated e substituted by fgtes.
-    fgets(destination, sizeof(destination), stdin);
+    printf("Enter second string: ");
+    fgets(strg2, sizeof(strg2), stdin);// gets(destination); -->> deprecated e substituted by fgets.
+
+    if(strcmp(strg1, strg2)==0)
+    {
+        printf("\nYou entered the same string two times");
+    }
  
-    // calculate length of characters in destination
-    len = strlen(destination); 
- 
-    printf("Your dream destination %s has %d characters in it", destination, len);
+    else
+    {
+        printf("\nEntered strings are not same!");
+    }
  
     // signal to operating system program ran fine
     return 0;
