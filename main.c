@@ -6,20 +6,29 @@
  
 int main()
 {
-    char strg1[40];
-    char strg2[40];
+    int n, i;
+    char *ptr;
  
-    printf("Enter first string: ");
-    fgets(strg1, sizeof(strg1), stdin);// gets(destination); -->> deprecated e substituted by fgets.
+    printf("Enter number of characters to store: ");
+    scanf("%d", &n);
  
-    printf("Enter second string: ");
-    fgets(strg2, sizeof(strg2), stdin);// gets(destination); -->> deprecated e substituted by fgets.
+    ptr = (char*)malloc(n*sizeof(char));
  
-    printf("\nConcatenating first and second string .. \n\n");
-    strcat(strg1, strg2);
+    for(i=0; i < n; i++)
+    {
+        printf("Enter ptr[%d]: ", i);
+        /* notice the space preceding %c is
+          necessary to read all whitespace in the input buffer
+        */
+        scanf(" %c", ptr+i); 
+    }
  
-    printf("First string: %s\n", strg1);
-    printf("Second string: %s", strg2);
+    printf("\nPrinting elements of 1-D array: \n\n");
+ 
+    for(i = 0; i < n; i++)
+    {
+        printf("%c ", ptr[i]);
+    }
  
     // signal to operating system program ran fine
     return 0;
