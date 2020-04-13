@@ -7,7 +7,7 @@
 int main()
 {
     char strg1[50], strg2[50];
-    int r;
+    int different;
  
     printf("Enter first string: ");
     fgets(strg1, sizeof(strg1), stdin);// gets(destination); -->> deprecated e substituted by fgets.
@@ -15,14 +15,16 @@ int main()
     printf("Enter second string: ");
     fgets(strg2, sizeof(strg2), stdin);// gets(destination); -->> deprecated e substituted by fgets.
 
-    if(strcmp(strg1, strg2)==0)
+    different = strcmp(strg1, strg2);
+
+    if (different)
     {
-        printf("\nYou entered the same string two times");
+        printf("\nsame string, difference %d/n/n", different);
     }
  
     else
     {
-        printf("\nEntered strings are not same!");
+        printf("\nnot same!, difference %d/n/n", different);
     }
  
     // signal to operating system program ran fine
