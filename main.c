@@ -6,28 +6,19 @@
  
 int main()
 {
-    int n, i;
-    char *ptr;
+    int i;
  
-    printf("Enter number of characters to store: ");
-    scanf("%d", &n);
+    char ch_arr[3][10] = {
+                             "spike",
+                             "tom",
+                             "jerry"
+                         };
+    
+    printf("1st way \n\n");
  
-    ptr = (char*)malloc(n*sizeof(char));
- 
-    for(i=0; i < n; i++)
+    for(i = 0; i < 3; i++)
     {
-        printf("Enter ptr[%d]: ", i);
-        /* notice the space preceding %c is
-          necessary to read all whitespace in the input buffer
-        */
-        scanf(" %c", ptr+i); 
-    }
- 
-    printf("\nPrinting elements of 1-D array: \n\n");
- 
-    for(i = 0; i < n; i++)
-    {
-        printf("%c ", ptr[i]);
+        printf("string = %s \t address = %p\n", ch_arr + i, ch_arr + i);
     }
  
     // signal to operating system program ran fine
