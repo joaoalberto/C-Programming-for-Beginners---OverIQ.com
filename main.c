@@ -18,7 +18,7 @@ int main()
                               }, name[10];
  
     printf("Enter username: ");
-    scanf("%s", &name);
+    scanf("%s", name);
  
     for (i = 0; i < 5; i++) {
       if (strcmp(name, master_list[i]) == 0) {
@@ -31,9 +31,9 @@ int main()
         printf("\nWelcome %s !\n", name);
         printf("\nEnter a number to calculate the factorial: ");
         scanf("%d", &n);
-        printf("Factorial of %d is %d", n, factorial(n)); }
+        printf("Factorial of %d is %d\n\n", n, factorial(n)); }
     else {
-        printf("Error: You are not allowed to run this program. %s", name);
+        printf("Error: You are not allowed to run this program. %s\n\n", name);
     }
  
     // signal to operating system program ran fine
