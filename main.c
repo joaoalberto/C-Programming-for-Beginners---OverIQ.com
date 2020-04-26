@@ -7,23 +7,17 @@ int factorial(int );
  
 int main()
 {
+    char s1[20];
+    char s2[20];
  
-    int sal;
-    char name[30], designation[30], info[60];
+    int x = 100;
+    float y = 300;
  
-    printf("Enter your name: ");
-    fgets(name, sizeof(name), stdin);// gets(name); -->> deprecated e substituted by fgets.
+    sprintf(s1, "%d", x);
+    sprintf(s2, "%f", y);
  
-    printf("Enter your designation: ");
-    fgets(designation, sizeof(designation), stdin);// gets(designation); -->> deprecated e substituted by fgets.
- 
-    printf("Enter your salary: ");
-    scanf("%d", &sal);
- 
-    sprintf(info, "Welcome %s !\nName: %s \nDesignation: %s\nSalary: %d",
-        name, name, designation, sal);
- 
-    printf("\n%s", info);
+    printf("s1 = %s\n", s1);
+    printf("s2 = %s\n", s2);
  
     // signal to operating system program ran fine
     return 0;
