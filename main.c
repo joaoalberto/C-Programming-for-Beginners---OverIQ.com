@@ -7,21 +7,23 @@ int factorial(int );
  
 int main()
 {
-    int i = 1, *ip = &i;
  
-    char *sports[] = {
-                         "golf",
-                         "hockey",
-                         "football",
-                         "cricket",
-                         "shooting"
-                     };
+    int sal;
+    char name[30], designation[30], info[60];
  
-    for(i = 0; i < 5; i++)
-    {
-        printf("String = %10s", sports[i] );
-        printf("\tAddress of string literal = %p\n", sports[i]);
-    }
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);// gets(name); -->> deprecated e substituted by fgets.
+ 
+    printf("Enter your designation: ");
+    fgets(designation, sizeof(designation), stdin);// gets(designation); -->> deprecated e substituted by fgets.
+ 
+    printf("Enter your salary: ");
+    scanf("%d", &sal);
+ 
+    sprintf(info, "Welcome %s !\nName: %s \nDesignation: %s\nSalary: %d",
+        name, name, designation, sal);
+ 
+    printf("\n%s", info);
  
     // signal to operating system program ran fine
     return 0;
